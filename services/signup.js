@@ -9,11 +9,11 @@ function signup(username,password) {
         password : password
     });
 
-    user.save() 
+    return user.save() 
 }
 
 function login(username,password) {
-    user.findOne({
+    return user.findOne({
         "username" : username,
         "password" : password
     })
