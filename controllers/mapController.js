@@ -1,4 +1,4 @@
-exports.homepage = async (req, res) => {
+exports.MapPage = async (req, res) => {
 
     res.render('MapPage');
 }

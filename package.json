@@ -21,5 +21,13 @@
     "mongoose": "^6.6.5",
     "nodemon": "^2.0.20"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kozoB/FinalProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kozoB/FinalProject/issues"
+  },
+  "homepage": "https://github.com/kozoB/FinalProject#readme",
   "description": ""
 }
