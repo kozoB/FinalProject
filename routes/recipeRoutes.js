@@ -16,10 +16,9 @@ router.post('/recipe/:id', recipeController.exploreRecipe );
 router.post('/categories', recipeController.exploreCategories);
 router.post('/categories/:id', recipeController.exploreCategoriesById);
 
-
  router.post('/login' , loginController.LoginPage);
  router.post('/register' , registerController.RegisterPage);
- router.post('/map' , mapController.MapPage); /////////////////////////// BAR - Added map page route
+ router.post('/map' , mapController.MapPage); /////////////////////////// BAR - Added map page route gsdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
  
  router.post('/signup' , signupController.signup);
  router.post('/search', recipeController.searchRecipe);
