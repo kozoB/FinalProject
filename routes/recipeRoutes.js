@@ -22,7 +22,6 @@ router.get('/categories/:id', recipeController.exploreCategoriesById);
  
  router.post('/map' , mapController.MapPage); /////////////////////////// BAR - Added map page route
  router.post('/signup' , signupController.signup);
-    
-
+ router.post('/signin' , signInController.login);
 
 module.exports = router
