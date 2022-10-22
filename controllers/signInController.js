@@ -5,7 +5,9 @@ function login(req, res){
     result.then(r=>{
         window.alert(r)
         res.end()
-    })
+    }
+    )
+
 }
 
 module.exports = { login }

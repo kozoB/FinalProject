@@ -3,9 +3,10 @@ const router = express.Router();
 
 const recipeController = require ('../controllers/recipeController')
 const loginController = require ('../controllers/loginController')
-const registerController = require ('../controllers/registerCnotroller')
+const registerController = require ('../controllers/registerController')
 const signupController = require ('../controllers/signupController')
 const mapController = require ('../controllers/mapController')
+const signInController = require ('../controllers/signInController')
 
 
 
