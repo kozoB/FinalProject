@@ -14,8 +14,11 @@ app.set('layout', './layout/main')
 app.set('view engine', 'ejs')
 
 const routes = require('./routes/recipeRoutes.js')
+const AuthRoutes = require('./routes/AuthRoutes');
+
 
 app.use('/', routes);
+app.use('/', AuthRoutes);
 
 
 app.listen(port, () => console.log('Listening to port ${port}'));

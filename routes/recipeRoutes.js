@@ -2,11 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 const recipeController = require ('../controllers/recipeController')
-const loginController = require ('../controllers/loginController')
-const registerController = require ('../controllers/registerController')
-const signupController = require ('../controllers/signupController')
+// const signupController = require ('../controllers/signupController')
 const mapController = require ('../controllers/mapController')
-const signInController = require ('../controllers/signInController')
+// const signInController = require ('../controllers/signInController')
 
 
 
@@ -17,12 +15,9 @@ router.get('/recipe/:id', recipeController.exploreRecipe );
 router.get('/categories', recipeController.exploreCategories);
 router.get('/categories/:id', recipeController.exploreCategoriesById);
 
- router.get('/login' , loginController.LoginPage);
- router.get('/register' , registerController.RegisterPage);
 
- 
  router.post('/map' , mapController.MapPage); /////////////////////////// BAR - Added map page route
- router.post('/signup' , signupController.signup);
- router.post('/signin' , signInController.login);
+//  router.post('/signup' , signupController.signup);
+//  router.post('/signin' , signInController.login);
 
 module.exports = router
