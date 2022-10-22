@@ -16,11 +16,9 @@ router.get('/recipe/:id', recipeController.exploreRecipe );
 router.get('/categories', recipeController.exploreCategories);
 router.get('/categories/:id', recipeController.exploreCategoriesById);
 
-
  router.post('/login' , loginController.LoginPage);
  router.post('/register' , registerController.RegisterPage);
  router.post('/map' , mapController.MapPage); /////////////////////////// BAR - Added map page route
- 
  router.post('/signup' , signupController.signup);
     
 
