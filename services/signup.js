@@ -1,6 +1,5 @@
 const User = require("../models/user");
 const mongoose = require('mongoose');
-const user = require("../models/user");
 
 function signup(username,password) {
 
@@ -13,7 +12,7 @@ function signup(username,password) {
 }
 
 function login(username,password) {
-    return user.findOne({
+    return User.findOne({
         "username" : username,
         "password" : password
     })
