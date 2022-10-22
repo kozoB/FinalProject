@@ -29,10 +29,6 @@ const RecipeSchema = new mongoose.Schema({
     type : String,
   }, 
 
-  /*numUses: { // For Statistic analytics
-    type : Int32,
-  },*/ 
-
   
 
 });

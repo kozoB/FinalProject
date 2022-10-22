@@ -11,15 +11,19 @@ const mapController = require ('../controllers/mapController')
 
 //  app Routes
 
- router.get('/' , recipeController.homepage);
+router.get('/', recipeController.homepage);
+router.get('/recipe/:id', recipeController.exploreRecipe );
+router.get('/categories', recipeController.exploreCategories);
+router.get('/categories/:id', recipeController.exploreCategoriesById);
+
+
  router.get('/login' , loginController.LoginPage);
  router.get('/register' , registerController.RegisterPage);
- router.get('/ExploreCategories' , recipeController.ExploreCategories);
- router.get('/recipe/:id' , recipeController.ExploreRecipe);
  router.get('/map' , mapController.MapPage); /////////////////////////// BAR - Added map page route
-
-
- router.post('/signup' , signupController.signup);
-
  
+ router.post('/signup' , signupController.signup);
+ router.post('/search', recipeController.searchRecipe);
+    
+
+
 module.exports = router

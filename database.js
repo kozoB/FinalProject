@@ -7,7 +7,7 @@ mongoose.connect('mongodb+srv://shovalash1:Excel1957@shovaldb.mg0smvv.mongodb.ne
 const db = mongoose.connection;
 db.on('eror', console.error.bind(console, "connection eror"));
 db.once('open', function () {
-    console.log('connected')
+    console.log('success connect to database')
 })
 
 require('./models/Category')

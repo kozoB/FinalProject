@@ -1,27 +1,8 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 
-
 const app = express();
-
-// const mongoose = require("mongoose");
-// mongoose.connect('mongodb+srv://shovalash1:Excel1957@shovaldb.mg0smvv.mongodb.net/shoval?retryWrites=true&w=majority' , { 
-//     useUnifiedTopology: true, 
-//     useNewUrlParser: true 
-// });
-
-
-// const session = require('express-session')
-// app.use(session({
-//     secret : 'foo' , 
-//     saveUninitialized: false,
-//     resave:false
-// }))
-
-
-
-
-const port = process.env.PORT || 80;
+const port = 80;
 
 require('dotenv').config();
 

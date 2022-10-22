@@ -4,51 +4,148 @@ const Category = require('../models/Category')
 const Recipe = require('../models/Recipe')
 
 
-
+/**
+ * GET /
+ * Homepage 
+*/
 exports.homepage = async (req, res) => {
   try {
     const limitNumber = 5;
-    const categories = await Category.find({}).limit(limitNumber)
-
-    const latest = await Recipe.find({}).sort({ _id: -1}).limit(limitNumber)
-    const food = { latest }
-
-    
-    res.render('homepage', { categories , food })
-
-
+    const categories = await Category.find({}).limit(limitNumber);
+    const food = await Recipe.find({}).sort({_id: -1}).limit(limitNumber);
+    res.render('index', { title: 'Cooking Blog - Home', categories , food } );
   } catch (error) {
-    res.status(500).send({ message: error.message || "Eror Occured " })
+    res.satus(500).send({message: error.message || "Error Occured" });
   }
-
 }
 
 
-exports.ExploreCategories = async (req, res) => {
+/**
+ * GET /categories
+ * Categories 
+*/
+exports.exploreCategories = async(req, res) => {
   try {
     const limitNumber = 20;
-    const categories = await Category.find({}).limit(limitNumber)
-    res.render('viewAllpage', { categories })
-
+    const categories = await Category.find({}).limit(limitNumber);
+    res.render('categories', { title: 'Cooking Blog - Categoreis', categories } );
   } catch (error) {
-    res.status(500).send({ message: error.message || "Eror Occured " })
+    res.satus(500).send({message: error.message || "Error Occured" });
   }
+} 
 
-}
 
-exports.ExploreRecipe = async (req, res) => {
+
+
+/**
+ * GET /categories/:id
+ * Categories By Id
+*/
+exports.exploreCategoriesById = async(req, res) => { 
   try {
-
-    let recipeId = req.params.id
-    const recipe = await Recipe.findById(recipeId)
-
-    res.render('Recipepage', {recipe})
-
+    let categoryId = req.params.id;
+    const limitNumber = 20;
+    const categoryById = await Recipe.find({ 'category': categoryId }).limit(limitNumber);
+    res.render('categories', { title: 'Cooking Blog - Categoreis', categoryById } );
   } catch (error) {
-    res.status(500).send({ message: error.message || "Eror Occured " })
+    res.satus(500).send({message: error.message || "Error Occured" });
   }
+} 
+ 
 
+
+
+/**
+ * GET /recipe/:id
+ * Recipe 
+*/
+exports.exploreRecipe = async(req, res) => {
+  try {
+    let recipeId = req.params.id;
+    const recipe = await Recipe.findById(recipeId);
+    res.render('recipe', { title: 'Cooking Blog - Recipe', recipe } );
+  } catch (error) {
+    res.satus(500).send({message: error.message || "Error Occured" });
+  }
+  
+} 
+
+
+
+/**
+ * POST /search
+ * Search 
+*/
+exports.searchRecipe = async(req, res) => {
+  try {
+    let searchTerm = req.body.searchTerm;
+    let recipe = await Recipe.find( { $text: { $search: searchTerm, $diacriticSensitive: true } });
+    res.render('search', { title: 'Cooking Blog - Search', recipe } );
+  } catch (error) {
+    res.satus(500).send({message: error.message || "Error Occured" });
+  }
+  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //  async function insertDymmyCategoryData() {
 
 //     try {
