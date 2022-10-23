@@ -8,8 +8,8 @@ const mongoose = require('mongoose');
 //         password : password
 //     });
 
-    return user.save() 
-}
+//     return user.save() 
+// }
 
 function login(username,password) {
     return User.findOne({
