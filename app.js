@@ -17,6 +17,7 @@ app.set('view engine', 'ejs')
 const routes = require('./routes/recipeRoutes.js')
 const AuthRoutes = require('./routes/AuthRoutes');
 const cookieParser = require('cookie-parser');
+const { application } = require('express');
 
 
 app.use('/', routes, AuthRoutes);
