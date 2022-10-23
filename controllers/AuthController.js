@@ -17,7 +17,14 @@ exports.getRegisterPage = async (req, res) => {
 exports.login = async (req, res) => {
     const result = loginService.login(req.body.username, req.body.password) // returns "promise"
     result.then(r => {
-        console.error(r)
+        console.log(r)
+        if (r){
+            res.send('Login Successful')
+        }
+
+        else{
+            res.redirect('/login?err1')
+        }
         res.end()
     }
     )
