@@ -33,25 +33,23 @@ exports.signup = async (req, res) => {
 
     User.findOne({ username: username })
         .then(userDoc => {
+
             if (userDoc) {
                 return res.redirect('/register?err1')
             }
-        })
 
-        .then(r => {
             const user = new User({
                 username: username,
                 password: password
-            })
-
+            });
             return user.save()
-        })
+        } )
         .then(result => {
             console.log('create user')
             res.redirect("/login")
         })
         .catch(err => {
-            console.log('Exsit in system try another username')
+            console.log('try another username')
         })
 
 }
