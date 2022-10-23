@@ -8,14 +8,11 @@ exports.getLoginPage = async (req, res) => {
     res.render('LoginPage');
 }
 
-
 exports.getRegisterPage = async (req, res) => {
 
     res.render('RegisterPage');
 
 }
-
-
 
 exports.login = async (req, res) => {
     const result = loginService.login(req.body.username, req.body.password) // returns "promise"
@@ -26,8 +23,6 @@ exports.login = async (req, res) => {
     )
 
 }
-
-
 
 
 exports.signup = async (req, res) => {
@@ -41,17 +36,14 @@ exports.signup = async (req, res) => {
             if (userDoc) {
                 return res.redirect('/register?err1')
             }
-            return bcrypt.hash(password, 12);
         })
 
-        .then(hasedPassword => {
-            const user = new User({
-                username: username,
-                password: hasedPassword
-            })
+    const user = new User({
+        username: username,
+        password: hasedPassword
+    })
 
-            return user.save()
-        })
+    return user.save()
         .then(result => {
             console.log('create user')
             res.redirect("/login")
