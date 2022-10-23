@@ -10,14 +10,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(expressLayouts);
 
+
 app.set('layout', './layout/main')
 app.set('view engine', 'ejs')
 
 const routes = require('./routes/recipeRoutes.js')
 const AuthRoutes = require('./routes/AuthRoutes');
+const cookieParser = require('cookie-parser');
 
 
 app.use('/', routes, AuthRoutes);
-
+app.use(cookieParser())
 
 app.listen(port, () => console.log('Listening to port ${port}'));

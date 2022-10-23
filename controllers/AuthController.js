@@ -1,6 +1,9 @@
 const loginService = require('../services/signup')
 const User = require("../models/user");
 const bcrypt = require('bcryptjs')
+const cookieParser = require('cookie-parser');
+const { application } = require('express');
+
 
 
 exports.getLoginPage = async (req, res) => {
@@ -15,10 +18,12 @@ exports.getRegisterPage = async (req, res) => {
 }
 
 exports.login = async (req, res) => {
+    console.log('cookies: ' + req.cookies)
     const result = loginService.login(req.body.username, req.body.password) // returns "promise"
     result.then(r => {
         console.log(r)
         if (r){
+            res.cookie('foo', 'bar')
             res.send('Login Successful')
         }
 
