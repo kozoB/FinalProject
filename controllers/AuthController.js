@@ -1,4 +1,5 @@
 const loginService = require('../services/signup')
+const User = require("../models/user");
 
 
 exports.getLoginPage = async (req, res) => {
@@ -26,10 +27,35 @@ exports.login = async (req, res) => {
 }
 
 exports.signup = async (req, res) => {
-   
-    const result = loginService.signup(req.body.username , req.body.password)
-    res.redirect('/');
-    
-  }
-  
+
+    const username = req.body.username
+    const password = req.body.password
+    const confirmPassword = req.body.confirmPassword
+
+    User.findOne({ username: username })
+        .then(userDoc => {
+            if (userDoc) {
+                console.log('username already exsit')
+                return res.redirect('/register?err1')
+            }
+
+            const user = new User({
+                username: username,
+                password: password
+            });
+
+            return user.save()
+            
+            
+        })
+        .then(result => {
+       
+            res.redirect("/login")
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+
+}
+
 

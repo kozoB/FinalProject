@@ -13,7 +13,6 @@ router.get('/recipe/:id', recipeController.exploreRecipe );
 router.get('/categories', recipeController.exploreCategories);
 router.get('/categories/:id', recipeController.exploreCategoriesById);
 
-
  router.post('/map' , mapController.MapPage); /////////////////////////// BAR - Added map page route
 
 
