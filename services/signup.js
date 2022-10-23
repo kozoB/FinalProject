@@ -18,4 +18,4 @@ function login(username,password) {
     })
 }
 
-module.exports = { signup, login }
+module.exports = { /*signup,*/ login }
