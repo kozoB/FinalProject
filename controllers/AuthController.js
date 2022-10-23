@@ -63,15 +63,15 @@ exports.signup = (req, res, next) => {
                         username: username,
                         password: password,
                     });
+                    console.log('user created')
                     return user.save();
                 })
                 .then(result => {
-                    console.log('user created')
                     res.redirect('/login');
 
                 })
                 .catch(err => {
-                    console.log(err);
+                    console.log('');
                 });
    
 };
