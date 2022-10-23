@@ -1,6 +1,7 @@
 const loginService = require('../services/signup')
 const User = require("../models/user");
 const bcrypt = require('bcryptjs')
+const { validationResult } = require("express-validator/check")
 
 
 exports.getLoginPage = async (req, res) => {
@@ -31,21 +32,32 @@ exports.signup = async (req, res) => {
     const password = req.body.password
     const confirmPassword = req.body.confirmPassword
 
+    const error = validationResult(req)
+    if (!error.isEmpty()) {
+        return res.status(422).render('RegisterPage', {
+            path: '/register',
+            pageTitle: 'register',
+            errorMessage: error.array()[0].msg
+        })
+    }
     User.findOne({ username: username })
         .then(userDoc => {
-
             if (userDoc) {
-                return res.redirect('/register?err1')
+                return res.redirect('/register')
             }
+            return bcrypt
+                .hash(password, 12)
+                .then(hashedPassword => {
 
-            const user = new User({
-                username: username,
-                password: password
-            });
-            return user.save()
-        } )
+                    const user = new User({
+                        username: username,
+                        password: hashedPassword
+                    })
+                    console.log('success create user')
+                    return user.save()
+                })
+        })
         .then(result => {
-            console.log('create user')
             res.redirect("/login")
         })
         .catch(err => {
