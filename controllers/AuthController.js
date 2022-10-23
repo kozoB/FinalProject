@@ -56,12 +56,12 @@ exports.signup = (req, res, next) => {
                 console.log('E-Mail exists already, please pick a different one.')
                 return res.redirect('/register');
             }
-            return bcrypt
-                .hash(password, 12)
-                .then(hashedPassword => {
+            // return bcrypt
+            //     .hash(password, 12)
+            //     .then(hashedPassword => {
                     const user = new User({
                         username: username,
-                        password: hashedPassword,
+                        password: password,
                     });
                     return user.save();
                 })
@@ -73,10 +73,7 @@ exports.signup = (req, res, next) => {
                 .catch(err => {
                     console.log(err);
                 });
-        })
-        .catch(err => {
-            console.log(err);
-        });
+   
 };
 
 
