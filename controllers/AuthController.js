@@ -38,12 +38,14 @@ exports.signup = async (req, res) => {
             }
         })
 
-    const user = new User({
-        username: username,
-        password: hasedPassword
-    })
+        .then(r => {
+            const user = new User({
+                username: username,
+                password: password
+            })
 
-    return user.save()
+            return user.save()
+        })
         .then(result => {
             console.log('create user')
             res.redirect("/login")
