@@ -1,5 +1,6 @@
 const loginService = require('../services/signup')
 const User = require("../models/user");
+const bcrypt = require('bcryptjs')
 
 
 exports.getLoginPage = async (req, res) => {
@@ -26,6 +27,9 @@ exports.login = async (req, res) => {
 
 }
 
+
+
+
 exports.signup = async (req, res) => {
 
     const username = req.body.username
@@ -35,25 +39,25 @@ exports.signup = async (req, res) => {
     User.findOne({ username: username })
         .then(userDoc => {
             if (userDoc) {
-                console.log('username already exsit')
                 return res.redirect('/register?err1')
             }
+            return bcrypt.hash(password, 12);
+        })
 
+        .then(hasedPassword => {
             const user = new User({
                 username: username,
-                password: password
-            });
+                password: hasedPassword
+            })
 
             return user.save()
-            
-            
         })
         .then(result => {
-       
+            console.log('create user')
             res.redirect("/login")
         })
-        .catch(err=>{
-            console.log(err)
+        .catch(err => {
+            console.log('Exsit in system try another username')
         })
 
 }
