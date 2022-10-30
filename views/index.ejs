@@ -65,6 +65,33 @@
 
 
 
+
+<!-- pruducts -Start -->
+<div class=" row row-cols-2 row-cols-lg-3 g-2 g-lg-3 py-4 border-bottom">
+
+    <% if(products !='' ) { %>
+        <% products.forEach(function(products) { %>
+
+            <a href="/products/<%- products.name %>" class="col text-center Products__link">
+                <div class="Products__img shadow">
+                    <img src="img/<%- products.image %> " loading="lazy">
+                </div>
+                <% }) %>
+                    <% } %>
+
+            </a>
+
+
+
+
+</div>
+<!-- pruducts -end -->
+
+
+
+
+
+
 <!-- Latest -start -->
 <section class="pb-4 pt-4 border-bottom">
 
