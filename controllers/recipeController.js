@@ -92,26 +92,111 @@ exports.searchRecipe = async (req, res) => {
   }
 };
 
-
-
-
-async function insertDymmyCategoryData() {
+async function AAA() {
   try {
     await Pn.insertMany([
 
+      {
+        name: "פוטוצל",
+        category: "גלאים ושעונים",
+        image: "/products/גלאים ושעונים/9521.jpg",
+        price: "32",
+        id: "9521",
+      },
 
       {
-        name: "נורת לד ליבון - ירוק",
-        category:"נורות לד",
-        image: "products/נורות/925334.jpg",
-        price:"19",
-        id:"925334"
-      }
+        name: "פוטוצל",
+        category: "גלאים ושעונים",
+        image: "/products/גלאים ושעונים/9522.jpg",
+        price: "54",
+        id: "9522",
+      },
 
-    ]);
+      {
+        name: "גלאי תנועה לקיר",
+        category: "גלאים ושעונים",
+        image: "/products/גלאים ושעונים/9523.jpg",
+        price: "87",
+        id: "9523",
+      },
+
+      {
+        name: "גלאי תנועה לתקרה",
+        category: "גלאים ושעונים",
+        image: "/products/גלאים ושעונים/9524.jpg",
+        price: "109",
+        id: "9524",
+      },
+
+      {
+        name: "גלאי עשן פוטו אלקטרוני",
+        category: "גלאים ושעונים",
+        image: "/products/גלאים ושעונים/6000.jpg",
+        price: "196",
+        id: "6000",
+      },
+
+      {
+        name: "גלאי עשן פוטו אלקטרוני",
+        category: "גלאים ושעונים",
+        image: "/products/גלאים ושעונים/6001.jpg",
+        price: "50",
+        id: "6001",
+      },
+
+      {
+        name: "שעון לדוד 24 שעות מרובע",
+        category: "גלאים ושעונים",
+        image: "/products/גלאים ושעונים/5400.jpg",
+        price: "98",
+        id: "5400",
+      },
+
+      {
+        name: "שעון לדוד 24 שעות מלבני",
+        category: "גלאים ושעונים",
+        image: "/products/גלאים ושעונים/5401.jpg",
+        price: "98",
+        id: "5401",
+      },
+
+      {
+        name: "שעון לדוד 24 שעות מלבני על הטיח",
+        category: "גלאים ושעונים",
+        image: "/products/גלאים ושעונים/5402.jpg",
+        price: "98",
+        id: "5402",
+      },
+
+      {
+        name: "טיימר מכני 180 דק",
+        category: "גלאים ושעונים",
+        image: "/products/גלאים ושעונים/5403.jpg",
+        price: "98",
+        id: "5403",
+      },
+
+      {
+        name: "טיימר מכני 180 דק מרובע תחת הטיח",
+        category: "גלאים ושעונים",
+        image: "/products/גלאים ושעונים/5404.jpg",
+        price: "54",
+        id: "5404",
+      },
+
+      {
+        name: "טיימר מכני לדוד 120 דק תחת הטיח",
+        category: "גלאים ושעונים",
+        image: "/products/גלאים ושעונים/5409.jpg",
+        price: "152",
+        id: "5409",
+      },
+
+    ]); 
+
   } catch (error) {
     console.log("err", +error);
   }
 }
 
-insertDymmyCategoryData()
+//  AAA()
