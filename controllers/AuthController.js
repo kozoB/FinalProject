@@ -3,7 +3,7 @@ const User = require("../models/user");
 const bcrypt = require('bcryptjs')
 const { validationResult } = require("express-validator/check")
 
-exports.getLoginPage = async (req, res) => {
+exports.getLoginPage = async (req, res) => {//
 
     res.render('LoginPage');
 }
