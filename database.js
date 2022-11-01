@@ -12,5 +12,5 @@ db.once('open', function () {
 
 require('./models/Category')
 require('./models/Recipe')
-
+require('./models/Stores')
 
