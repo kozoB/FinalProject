@@ -11,6 +11,6 @@ db.once('open', function () {
 })
 
 require('./models/Category')
-require('./models/Recipe')
-require('./models/Stores')
+require('./models/Product')
+require('./models/User')
 

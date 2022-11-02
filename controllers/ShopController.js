@@ -1,36 +1,31 @@
 require('../database')
-const product = require("../models/product");
-const Pn = require("../models/Pn");
+const Category = require("../models/Category");
+const Product = require("../models/Product");
 
+
+
+exports.homepage = async (req, res) => {
+  try {
+
+    const categories = await Category.find({});
+
+    res.render( "index", { title: "Cooking Blog - Home", categories} );
+  } catch (error) {
+    res.status(404).send({message: error.message || "Error Occured"});
+  }
+
+};
 
 
 exports.exploreCategoriesById = async (req, res) => {
-    try {
-      let categoryId = req.params.id;
-      const limitNumber = 20;
-      const categoryById = await Pn.find({ category: categoryId });
-      
-      res.render("Pn", {categoryById});
-    } catch (error) {
-      res.status(404).send({ message: error.message || "Error Occured" });
-    }
-  };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  try {
+    const categoryId = req.params.id;
+    const categoryById = await Product.find({ "category" : categoryId })
+    res.render("Products", {categoryById} );
+  } catch (error) {
+    res.status(404).send({ message: error.message || "Error Occured" });
+  }
+};
 
 
 

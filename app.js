@@ -14,15 +14,13 @@ app.use(expressLayouts);
 app.set('layout', './layout/main')
 app.set('view engine', 'ejs')
 
-const routes = require('./routes/recipeRoutes.js')
 const AuthRoutes = require('./routes/AuthRoutes');
-const productsRouts = require('./routes/productsRouts');
+const ShopRouts = require('./routes/ShopRouts');
 
 const cookieParser = require('cookie-parser');
-const { application } = require('express');
 
 
-app.use('/', routes, AuthRoutes,productsRouts);
+app.use('/', AuthRoutes,ShopRouts);
 app.use(cookieParser())
 
 app.listen(port, () => console.log('Listening to port ${port}'));

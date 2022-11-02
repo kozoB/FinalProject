@@ -1,11 +1,10 @@
 .container-xxl{
-    max-width: 1600px;
+    max-width: 1700px;
     padding:60px;
 }
 
 body{
 background-image: url(../img/a1.png);
-
 }
 
 /* category Card */
@@ -13,14 +12,9 @@ background-image: url(../img/a1.png);
 .category__link{
 
     text-align: center;
-    display: block;
-    text-decoration: none;
-    transition: 250ms all;
+    transition: 1250ms all;
 
 }
-
-
-
 .category__link:hover{
     transform: scale(1.1);
 }
@@ -30,38 +24,13 @@ background-image: url(../img/a1.png);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 190px;
+    height: 300px;
+    width: 95%;
     margin-bottom: 10px;
     box-shadow: 0px 3px 6px rgb(0, 0, 0,.16);
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 25px;
 }
-
-.Products__img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 290px;
-    margin-bottom: 10px;
-    box-shadow: 0px 3px 6px rgb(0, 0, 0,.16);
-    overflow: hidden;
-    border-radius: 8px
-
-}
-
-
-
-.category__img{
-    width: 100%;
-    object-fit: cover;
-}
-
-.category__img--large{
-
-    height: 330px;
-
-}
-
 
 
 .user-message {
@@ -79,6 +48,27 @@ background-image: url(../img/a1.png);
     color: red;
   }
 
-.mmm{
-    text-align-last: end;
+
+
+/* product Card */
+
+  .product__img{
+    height: 230px;
+    width: 90%;
+}
+
+.products__link{
+
+    transition: 1250ms all;
+
+}
+.products__link:hover{
+    transform: scale(1.1);
+}
+
+.card{
+
+}
+.card-body{
+    text-align: right;
 }

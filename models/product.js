@@ -1,16 +1,30 @@
 const mongoose = require('mongoose');
 
-const ProductSchema = new mongoose.Schema({
+const ProductsSchema = new mongoose.Schema({
 
   name: {
     type: String,
-    required: 'This field is required.'
   },
+
+  category: {
+    type : String,
+    enun : ['תאורה' , 'נורות לד', 'מפסקים ושקעים' , "פעמונים", "גלאים ושעונים", "אינסטלציה חשמלית"]
+
+  }, 
+
   image: {
-    type: String,
-    required: 'This field is required.'
+    type : String,
+  }, 
+
+  price:{
+    type: Number
   },
+  
+  id:{
+    type: String
+  }
+  
 });
 
 
-module.exports = mongoose.model('Products', ProductSchema);
+module.exports = mongoose.model('Product', ProductsSchema);

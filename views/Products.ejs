@@ -1,0 +1,23 @@
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center  " >
+<% if(typeof categoryById !== 'undefined' && categoryById.length > 0) { %>
+  <% categoryById.forEach(function(categoryById){ %>
+    
+    
+
+    <div class="card" style=" margin-left: 15px;">
+
+      <img class="card-img-top product__img" src="/img/<%= categoryById.image %>" alt="Card image cap">
+      <div class="card-body">
+          <div class="card-text mb-1"><%= categoryById.name %></div>
+          <div class="card-text mb-1">  מחיר : <%= categoryById.price %> ש"ח</div>
+          <div class="card-text mb-1">מקט : <%= categoryById.id %></div>
+          <a href="#" class="btn btn-primary">הוסף לעגלה  </a>
+      </div>
+
+    </div>
+
+
+    <% }) %>
+  <% } %>
+
+</div>
