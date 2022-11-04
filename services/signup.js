@@ -1,15 +1,5 @@
 const User = require("../models/User");
-const mongoose = require('mongoose');
 
-// function signup(username,password) {
-
-//     const user = new User({
-//         username : username,
-//         password : password
-//     });
-
-//     return user.save() 
-// }
 
 function login(username,password) {
     return User.findOne({
@@ -18,4 +8,4 @@ function login(username,password) {
     })
 }
 
-module.exports = { /*signup,*/ login }
+module.exports = { login }

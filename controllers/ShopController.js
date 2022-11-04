@@ -2,7 +2,12 @@ require('../database')
 const Category = require("../models/Category");
 const Product = require("../models/Product");
 
-
+function isLoggedIn(req, res, next) {
+  if (req.session.username != null)
+    return next()
+  else
+    res.redirect('/login')
+}
 
 exports.homepage = async (req, res) => {
   try {
@@ -26,6 +31,15 @@ exports.exploreCategoriesById = async (req, res) => {
     res.status(404).send({ message: error.message || "Error Occured" });
   }
 };
+
+
+
+
+
+
+
+
+
 
 
 
