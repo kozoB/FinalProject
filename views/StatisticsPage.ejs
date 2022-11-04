@@ -1,2 +1,19 @@
 <h1>Statistics</h1>
 
+<!-- categories -Start -->
+<div class=" row row-cols-2 row-cols-lg-3 g-2 g-lg-3 py-4 border-bottom">
+
+    <% if( categories != '' ) { %>
+        <% categories.forEach(function(categories) { %>
+
+            <a href="/categories/<%- categories.name %>" class="col text-center category__link">
+
+                <div class="category__img shadow">
+                    <img src="img/<%- categories.image %> " loading="lazy">
+                </div>
+
+                <% }) %>
+            <% } %>
+            </a>
+</div>
+<!-- categories -end -->
