@@ -10,7 +10,7 @@ const adminController = require ('../controllers/adminController')
 
 router.get('/', ShopController.homepage);
 router.get('/categories/:id', ShopController.exploreCategoriesById);
-router.get('/statistics' , statisticsController.exploreStatisticsById);
+router.get('/statistics' , statisticsController.StatisticsPage);
 router.get('/map' , mapController.MapPage);
 router.get('/add-product', adminController.getAddProduct);
 router.post('/add-product', adminController.postAddProduct);

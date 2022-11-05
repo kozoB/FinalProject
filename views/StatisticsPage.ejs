@@ -1,19 +1,25 @@
 <h1>Statistics</h1>
 
-<!-- categories -Start -->
-<div class=" row row-cols-2 row-cols-lg-3 g-2 g-lg-3 py-4 border-bottom">
-
-    <% if( categories != '' ) { %>
-        <% categories.forEach(function(categories) { %>
-
-            <a href="/categories/<%- categories.name %>" class="col text-center category__link">
-
-                <div class="category__img shadow">
-                    <img src="img/<%- categories.image %> " loading="lazy">
-                </div>
-
-                <% }) %>
-            <% } %>
-            </a>
-</div>
-<!-- categories -end -->
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center  " >
+    <% if(typeof categoryById !== 'undefined' && categoryById.length > 0) { %>
+      <% categoryById.forEach(function(categoryById){ %>
+        
+        
+    
+        <div class="Product-card" style=" margin-left: 15px;">
+    
+          <img class="card-img-top product-img" src="/img/<%= categoryById.image %>" alt="Card image cap">
+          <div class="card-body">
+              <div class="card-text mb-1"><%= categoryById.name %></div>
+              <div class="card-text mb-1">  מחיר : <%= categoryById.price %> ש"ח</div>
+              <div class="card-text mb-1">מקט : <%= categoryById.id %></div>
+              <a href="#" class="btn btn-primary">הוסף לעגלה  </a>
+          </div>
+    
+        </div>
+    
+    
+        <% }) %>
+      <% } %>
+    
+    </div>
