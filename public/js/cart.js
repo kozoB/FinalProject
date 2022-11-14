@@ -1,3 +1,4 @@
-document.getElementById("cartForm").addEventListener("submit", () => {
-  alert("success payment");
-});
+
+document.getElementById('cartForm').addEventListener('submit', () => {
+  alert('success payment')  
+})

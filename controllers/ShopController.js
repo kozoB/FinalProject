@@ -52,6 +52,13 @@ exports.checkout = async (req, res) => {
   req.session.cart=[]
   res.redirect("/");
 };
+exports.getStatic = async (req, res) => {
+  const {isAdmin,isLoggedIn} = req.session;
+
+  res.render("D3", { isAdmin,isLoggedIn });
+};
+
+
 
 // async function insertDymmyCategoryData() {
 //   try {
