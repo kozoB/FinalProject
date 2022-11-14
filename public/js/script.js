@@ -1,14 +1,20 @@
 const data = [
-    { name: 'John', score: 80 },
-    { name: 'Simon', score: 76 },
-    { name: 'Samantha', score: 90 },
-    { name: 'Patrick', score: 82 },
-    { name: 'Mary', score: 90 },
-    { name: 'Christina', score: 75 },
-    { name: 'Michael', score: 86 },
+    { name: 'January', score: 80 },
+    { name: 'February', score: 76 },
+    { name: 'March', score: 90 },
+    { name: 'April', score: 82 },
+    { name: 'May', score: 90 },
+    { name: 'Juny', score: 75 },
+    { name: 'July', score: 75 },
+    { name: 'August', score: 75 },
+    { name: 'September', score: 75 },
+    { name: 'October', score: 75 },
+    { name: 'November', score: 75 },
+    { name: 'December', score: 75 },
+
   ];
   
-  const width = 900;
+  const width = 1200;
   const height = 450;
   const margin = { top: 50, bottom: 50, left: 50, right: 50 };
   
@@ -24,7 +30,7 @@ const data = [
     .padding(0.1)
   
   const y = d3.scaleLinear()
-    .domain([0, 100])
+    .domain([0, 1000])
     .range([height - margin.bottom, margin.top])
   
   svg
