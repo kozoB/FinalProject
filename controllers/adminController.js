@@ -1,9 +1,9 @@
 const Product = require("../models/Product");
 
 exports.getAddProduct = async (req, res) => {
+  const {isAdmin, isLoggedIn} = req.session;
+    res.render("add-product", {isAdmin, isLoggedIn})
 
-    res.render("add-product")
-    
     }
     
     
@@ -29,7 +29,7 @@ exports.getAddProduct = async (req, res) => {
         .then(result => {
             // console.log(result);
             console.log('Created Product');
-            res.redirect('/admin/products');
+            res.redirect(`/categories/${result.category}`);
           })
           .catch(err => {
             console.log(err);
@@ -37,5 +37,23 @@ exports.getAddProduct = async (req, res) => {
       };        
         
         
-        
-        
+    exports.logOut = async(req,res) => {
+      req.session.destroy();
+      res.redirect('/login')
+
+    }
+    
+
+    exports.getDashboard = async (req,res)=> {
+
+    
+      res.redirect("/")
+
+
+    }
+    exports.deleteProduct = async (req,res)=> {
+      const {productId} = req.body;
+      await Product.findByIdAndDelete(productId)
+      res.redirect("/")
+
+    }

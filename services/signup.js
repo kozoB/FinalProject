@@ -1,11 +1,10 @@
 const User = require("../models/User");
+const bcrypt = require("bcryptjs");
 
-
-function login(username,password) {
-    return User.findOne({
-        "username" : username,
-        "password" : password
-    })
+async function login(username, password) {
+  const user = await User.findOne({ username });
+  const result = bcrypt.compare(password, user.password)
+  return  {result, user}
 }
 
-module.exports = { login }
+module.exports = { login };

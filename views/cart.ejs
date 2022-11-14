@@ -1,0 +1,23 @@
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center">
+  <% if(cartItems.length > 0) { %> <%cartItems.forEach(function(cartitem){ %>
+
+  <div class="Product-card" style="margin-left: 15px">
+    <img
+      class="card-img-top product-img"
+      src="/img/<%= cartitem.image %>"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <div class="card-text mb-1"><%= cartitem.name %></div>
+      <div class="card-text mb-1">מחיר : <%= cartitem.price %> ש"ח</div>
+      <div class="card-text mb-1">מקט : <%= cartitem.id %></div>
+    </div>
+
+    <% }) %> <% } else { %>
+    <h1>no items in cart</h1>
+    <%}%>
+    <form id="cartForm" action="/checkout" method="POST">
+      <button>קנייה</button>
+    </form>
+  </div>
+</div>

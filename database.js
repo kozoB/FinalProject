@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-mongoose.connect('mongodb+srv://shovalash1:Excel1957@shovaldb.mg0smvv.mongodb.net/shoval?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGODB_URI, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 });

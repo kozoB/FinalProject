@@ -1,4 +1,4 @@
 exports.MapPage = async (req, res) => {
-
-    res.render('MapPage');
+    const {isAdmin,isLoggedIn} = req.session;
+    res.render('MapPage', {isAdmin,isLoggedIn});
 }

@@ -1,23 +1,32 @@
-<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center  " >
-<% if(typeof categoryById !== 'undefined' && categoryById.length > 0) { %>
-  <% categoryById.forEach(function(categoryById){ %>
-    
-    
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center">
+  <% if(typeof products !== 'undefined' && products.length > 0) { %> <%
+  products.forEach(function(product){ %>
 
-    <div class="Product-card" style=" margin-left: 15px;">
+  <div class="Product-card" style="margin-left: 15px">
+    <img
+      class="card-img-top product-img"
+      src="/img/<%= product.image %>"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <div class="card-text mb-1"><%= product.name %></div>
+      <div class="card-text mb-1">מחיר : <%= product.price %> ש"ח</div>
+      <div class="card-text mb-1">מקט : <%= product.id %></div>
+      <form action="/add-to-cart" method="POST">
+        <input type="hidden" name="productId" value="<%=product._id%>" />
+        <button type="submit" class="btn btn-primary">הוסף לעגלה</button>
+      </form>
 
-      <img class="card-img-top product-img" src="/img/<%= categoryById.image %>" alt="Card image cap">
-      <div class="card-body">
-          <div class="card-text mb-1"><%= categoryById.name %></div>
-          <div class="card-text mb-1">  מחיר : <%= categoryById.price %> ש"ח</div>
-          <div class="card-text mb-1">מקט : <%= categoryById.id %></div>
-          <a href="#" class="btn btn-primary">הוסף לעגלה  </a>
-      </div>
+      <% if(isAdmin) { %>
 
+      <form action="/delete-product" method="post">
+        <input type="hidden" name="productId" value="<%= product._id%>" >
+        <button type="submit" class="btn btn-primary">מחק מוצר</button>
+      </form>
+
+      <%}%>
     </div>
+  </div>
 
-
-    <% }) %>
-  <% } %>
-
+  <% }) %> <% } %>
 </div>
