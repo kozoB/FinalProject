@@ -18,7 +18,7 @@ router.get("/logout", adminController.logOut);
 router.get("/cart", initCart ,ShopController.getCart);
 router.post("/checkout",ShopController.checkout);
 router.post("/delete-product/",adminController.deleteProduct);
-router.get("/D3",ShopController.getStatic);
+router.get("/D3",isLoggedIn,ShopController.getStatic);
 
 
 router.get(
