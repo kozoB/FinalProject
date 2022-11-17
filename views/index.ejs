@@ -1,33 +1,9 @@
-<div class="  row flex-lg-row-reverse align-items-centert g-5 py-4 mb-4 border-bottom  ">
+<section id="page-header">
+
+    <h2>#WELCOME TO THE BEST SHOP IN THE TOWN</h2>
 
 
-    <div class="col-12 col-lg-6">
-        <img src="../img/hero-image.png" width="607" height="510" class="d-block mx-lg-auto img-fluid" loading="lazy"
-            alt="picture">
-    </div>
-
-    <div class="col-12 col-lg-6 ">
-
-        <h1 class="display-5 fw-bold mb-3">Huge selectoin of delicios recipe idea</h1>
-        <p class="lead ">
-            explore our huge selection of delicios recipe ideas including easy desserts, delicios vegan and vegetarian
-            dinner ideas, gorgeous pasta
-            recipes, quick bakes, family-friendly meals and gluten-free recipes
-        </p>
-
-        <div class=" d-grid gap-2 d-md-flex justify-content-md-start">
-
-            <a href="/explore-latest" class="btn btn-primary btn-dark bt-lg px-4 me-md-2"> Explore Lastes</a>
-            <a href="/map" class="btn btn-outline-secondary bt-lg px-4 me-md-2"> Show map</a>
-
-
-        </div>
-
-    </div>
-
-
-
-</div>
+</section>
 
 
 
@@ -41,7 +17,7 @@
             <a href="/categories/<%- categories.name %>" class="col text-center category__link">
 
                 <div class="category__img shadow">
-                    <img src="img/<%- categories.image %> " loading="lazy">
+                    <img class="categoryimg" src="img/<%- categories.image %> " loading="lazy">
                 </div>
 
                 <% }) %>
@@ -54,23 +30,40 @@
 
 
 
-<!-- submit section - start-->
-<section class="px-4 py-5 my-5 text-center">
-
-    <img class="d-block mx-auto mb-4 img-fluid" src="../img/publish-recipe.png" alt="Publish Your recipe for FREE today"
-        width=556 height="208" loading="lazy">
-
-    <h1 class=" display-5 fw-bold ">Publish Your recipe for FREE today</h1>
-
-    <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">
-            Publish Your recipe infront of thousands of people for free.
-        </p>
+<section id="feature" class="section-p1">
+    <div class="fe-box">
+        <img src="/img/features/f1.png" alt="">
+        <h6>Free Shipping</h6>
     </div>
-
-    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <a href="/submit-recipe" class="btn btn-primary btn-dark btn-lg"> Submit Recipe</a>
+    <div class="fe-box">
+        <img src="/img/features/f2.png" alt="">
+        <h6>Online Order</h6>
     </div>
-
+    <div class="fe-box">
+        <img src="/img/features/f3.png" alt="">
+        <h6>Save Money</h6>
+    </div>
+    <div class="fe-box">
+        <img src="/img/features/f4.png" alt="">
+        <h6>Promotions</h6>
+    </div>
+    <div class="fe-box">
+        <img src="/img/features/f5.png" alt="">
+        <h6>Happy Sell</h6>
+    </div>
+    <div class="fe-box">
+        <img src="/img/features/f6.png" alt="">
+        <h6>F24/7 Support</h6>
+    </div>
 </section>
-<!-- submit section - end-->
+
+<section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+        <h4>Sign Up For Newsletters</h4>
+        <p>Get E-mail updates about our latest shop and <span>special offers.</span> </p>
+    </div>
+    <div class="form">
+        <input type="text" placeholder="Your email address">
+        <button class="normal">Sign Up</button>
+    </div>
+</section>
