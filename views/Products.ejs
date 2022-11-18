@@ -2,7 +2,6 @@
 <section id="page-header">
 
   <h2>#WELCOME TO THE BEST SHOP IN THE TOWN</h2>
-<a href="/Map"><button>Map</button></a>
 
 </section>
 
@@ -15,14 +14,12 @@
     <% if(typeof products !=='undefined' && products.length> 0) { %> <% products.forEach(function(product){ %>
 
 
-        <div class="pro EEE">
+        <div class="pro">
 
-          <img class="img_product" src="\img\<%= product.image %>">
+          <img class="img_products " src="\img\<%= product.image %>">
 
           <div class="des">
-            <span>
-              <%= product.category %>
-            </span>
+  
             <h5>
               <%= product.name %>
             </h5>
@@ -34,20 +31,17 @@
               <i class="fas fa-star"></i>
             </div>
             <h4>
-              <%= product.price %>
+              $<%= product.price %>
             </h4>
-            <h3>
-              <%= product.id %>
-            </h3>
+            <div>
+              <form class="add_to_cart" action="/add-to-cart" method="POST">
+                <input type="hidden" name="productId" value="<%=product._id%>" />
+                <button type="submit" class="btn btn-transparent">Add to cart <i
+                    class="icon fas fa-cart-plus"></i></button>
+              </form>
+            </div>
           </div>
 
-          <div>
-            <form class="add_to_cart" action="/add-to-cart" method="POST">
-              <input type="hidden" name="productId" value="<%=product._id%>" />
-              <button type="submit" class="btn btn-transparent">Add to cart <i
-                  class="icon fas fa-cart-plus"></i></button>
-            </form>
-          </div>
 
           <% if(isAdmin) { %>
 
