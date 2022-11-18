@@ -39,7 +39,7 @@
 
 
 <section id="header">
-  <nav class="navbar navbar-expand-lg" style="background-color: #e0dbdba8;">
+  <nav class="navbar navbar-expand-lg" style="background-color: #4d0000;">
     <div class="container-fluid">
 
 
@@ -52,16 +52,16 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link  " aria-current="page" href="/">Home</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/about">About</a>
+            <a class="nav-link " href="/about">About</a>
           </li>
 
           
           
-          <li class="nav-item">
+          <li class="nav-item  ">
             <a class="nav-link" href="/cart"> Cart &nbsp; <i class="far fa-shopping-bag ">  </i> </a>
             
           </li>
@@ -88,18 +88,18 @@
 
         <%if (isLoggedIn) { %>
           <a href="/logout">
-            <button type="button" class="btn btn-outline-light me-2 text-black border">
+            <button type="button" class="btn btn-secondary active me-2 text-black border">
               Logout
             </button>
           </a>
           <%} else {%>
             <a href="/login">
-              <button type="button" class="btn btn btn-primary me-2 text-black border">
+              <button type="button" class="btn btn-secondary active me-2 text-black border">
                 Login
               </button>
             </a>
             <a href="/signup">
-              <button type="button" class="btn btn-warning">Register</button>
+              <button type="button" class="btn btn-secondary active ">Register</button>
             </a>
             <%}%>
 
@@ -117,18 +117,11 @@
     <%- body %>
   </main>
 
+  
 
-  <section id="newsletter" class="section-p1 section-m1">
-    <div class="newstext">
-        <h4>Sign Up For Newsletters</h4>
-        <p>Get E-mail updates about our latest shop and <span>special offers.</span> </p>
-    </div>
-    <div class="form">
-        <input type="text" placeholder="Your email address">
-        <button class="normal">Sign Up</button>
-    </div>
-</section>
 
+
+  </section>
 
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
