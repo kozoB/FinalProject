@@ -58,6 +58,12 @@ exports.getStatic = async (req, res) => {
   res.render("D3", { isAdmin,isLoggedIn });
 };
 
+exports.getAbout = async (req, res) => {
+  const {isAdmin,isLoggedIn} = req.session;
+
+  res.render("about", { isAdmin,isLoggedIn });
+};
+
 
 
 // async function insertDymmyCategoryData() {
