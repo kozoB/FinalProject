@@ -1,157 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- bootstarp icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
-    />
 
-    <!-- MDB -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
-      rel="stylesheet"
-    />
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- bootstarp icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
 
-    <!-- Font Awesome -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
 
-    <!-- the title from the controller  -->
-    <title>Cookie Blog - Home</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
 
-    <!-- style -->
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
-  <body>
-    <div class="container-xxl md-5 bg-white shadow-lg">
-      <header class="p-3">
-        <div class="container">
-          <div
-            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
-          >
-            <a
-              href="/"
-              class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
-            >
-              <svg
-                class="bi me-2"
-                width="40"
-                height="32"
-                role="img"
-                aria-label="Bootstrap"
-              >
-                <use xlink:href="#bootstrap"></use>
-              </svg>
+  <!-- the title from the controller  -->
+  <title>Cookie Blog - Home</title>
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+
+  <!-- style -->
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+
+
+
+<section id="header">
+  <nav class="navbar navbar-expand-lg" style="background-color: #381a1aa8;">
+    <div class="container-fluid">
+
+
+      <a class="navbar-brand" href="#">
+        <img src="\img\SBNN 2.png" class="img" alt="">
+      </a>
+
+
+      <div class="collapse navbar-collapse A" id="navbarColor03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/cart"> Cart &nbsp; <i class="far fa-shopping-bag ">  </i> </a>
+            
+          </li>
+          
+          <%if(isAdmin) {%>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/add-product">Add-Product</a>
+          </li>
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="/D3">Statistics</a>
+          </li>
+
+          <%}%>
+          
+        </ul>
+        
+        <form class="d-flex " role="search">
+          <input class="form-control me-2 input" type="search" placeholder="Search" aria-label="Search">
+        </form>
+
+        <%if (isLoggedIn) { %>
+          <a href="/logout">
+            <button type="button" class="btn btn-outline-light me-2 text-black border">
+              Logout
+            </button>
+          </a>
+          <%} else {%>
+            <a href="/login">
+              <button type="button" class="btn btn btn-primary me-2 text-black border">
+                Login
+              </button>
             </a>
+            <a href="/signup">
+              <button type="button" class="btn btn-warning">Register</button>
+            </a>
+            <%}%>
 
-            <ul
-              class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
-            >
-              <li><a href="/" class="nav-link px-2 text-black">Home</a></li>
-              <li><a href="#" class="nav-link px-2 text-black">Features</a></li>
-              <li><a href="/D3" class="nav-link px-2 text-black">D3</a></li>
-              <li><a href="/cart" class="nav-link px-2 text-black">cart</a></li>
-              <li><a href="#" class="nav-link px-2 text-black">About</a></li>
-              <%if(isAdmin) {%>
-              <li>
-                <a href="/add-product" class="nav-link px-2 text-black"
-                  >add product</a
-                >
-              </li>
-              <%}%>
-            </ul>
-
-            <form
-              method="post"
-              action="/search"
-              class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
-            >
-              <input
-                type="search"
-                name="searchTerm"
-                class="form-control form-control-dark"
-                placeholder="Search..."
-                aria-label="Search"
-              />
-            </form>
-
-            <div class="text-end">
-              <%if (isLoggedIn) { %>
-              <a href="/logout">
-                <button
-                  type="button"
-                  class="btn btn-outline-light me-2 text-black border"
-                >
-                  Logout
-                </button>
-              </a>
-              <%} else {%>
-              <a href="/login">
-                <button
-                  type="button"
-                  class="btn btn-outline-light me-2 text-black border"
-                >
-                  Login
-                </button>
-              </a>
-              <a href="/signup">
-                <button type="button" class="btn btn-warning">Register</button>
-              </a>
-              <%}%>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <main><%- body %></main>
+      </div>
     </div>
 
-    
+
+  </nav>
+
+</section>
 
 
-    <!-- MDB -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"
-    ></script>
+<section id="page-header">
 
-    <!-- JavaScript Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-      crossorigin="anonymous"
-    ></script>
+  <h2>#WELCOME TO THE BEST SHOP IN THE TOWN</h2>
 
-    <!-- D3 (Analytics) -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
 
-    <!-- Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTYd6Lc2H7O7u_Zt1jLXG23UihDSAtxDs&callback=myMap"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="/js/cart.js"></script>
-    <script src="/js/script.js"></script>
+</section>
 
-  </body>
+
+  <main>
+    <%- body %>
+  </main>
+  </div>
+
+
+
+
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+  <!-- D3 (Analytics) -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- Google Maps API -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTYd6Lc2H7O7u_Zt1jLXG23UihDSAtxDs&callback=myMap"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/script.js"></script>
+
+</body>
+
 </html>
