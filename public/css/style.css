@@ -65,6 +65,7 @@ body {
   font-size: 20px;
 }
 .container-xxl {
+  max-width: 10px;
   padding: 60px;
 }
 

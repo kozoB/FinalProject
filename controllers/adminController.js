@@ -6,8 +6,6 @@ exports.getAddProduct = async (req, res) => {
 
     }
     
-    
-    
     exports.postAddProduct = async (req, res) => {
 
         const name = req.body.name;
@@ -29,7 +27,7 @@ exports.getAddProduct = async (req, res) => {
         .then(result => {
             // console.log(result);
             console.log('Created Product');
-            res.redirect(`https://twitter.com/intent/tweet?button_hashtag=addItems&ref_src=twsrc%5Etfw`);
+            res.redirect('https://twitter.com/intent/tweet?button_hashtag=addItems&ref_src=twsrc%5Etfw');
           })
           .catch(err => {
             console.log(err);
