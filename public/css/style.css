@@ -3,7 +3,7 @@
 }
 body {
   background-image: url("");
-
+  background-color: whitesmoke;
 }  
 
 
@@ -51,6 +51,7 @@ body {
   background-image: url("../img/b1.jpg");
   background-size: cover;
   padding: 14px;
+  margin-bottom: -10px;
 }
 
 #page-header h2,
