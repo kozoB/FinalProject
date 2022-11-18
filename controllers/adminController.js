@@ -29,7 +29,7 @@ exports.getAddProduct = async (req, res) => {
         .then(result => {
             // console.log(result);
             console.log('Created Product');
-            res.redirect(`/categories/${result.category}`);
+            res.redirect(`https://twitter.com/intent/tweet?button_hashtag=addItems&ref_src=twsrc%5Etfw`);
           })
           .catch(err => {
             console.log(err);
