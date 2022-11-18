@@ -1,12 +1,21 @@
 
 
+
+<section id="page-header">
+
+    <h2>#WELCOME TO THE BEST SHOP IN THE TOWN</h2>
+  
+  </section>
+  
+  
+
 <!-- categories -Start -->
-<section class=" row row-cols-2 row-cols-lg-3 g-2 g-lg-3 py-4 border-bottom ss">
+<section class=" row row-cols-2 row-cols-lg-3 g-2 g-lg-3 py-4  ">
 
     <% if( categories !='' ) { %>
         <% categories.forEach(function(categories) { %>
 
-            <a href="/categories/<%- categories.name %>" class="col text-center category__link">
+            <a href="/categories/<%- categories.name %>" class="col text-center">
 
                     <img class="Img" src="img/<%- categories.image %> " loading="lazy">
 
@@ -18,17 +27,6 @@
 </section>
 <!-- categories -end -->
 
-
-<section id="newsletter" class="section-p1 section-m1">
-    <div class="newstext">
-        <h4>Sign Up For Newsletters</h4>
-        <p>Get E-mail updates about our latest shop and <span>special offers.</span> </p>
-    </div>
-    <div class="form">
-        <input type="text" placeholder="Your email address">
-        <button class="normal">Sign Up</button>
-    </div>
-</section>
 
 
 

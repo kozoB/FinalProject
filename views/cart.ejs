@@ -1,23 +1,75 @@
-<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 justify-content-center">
-  <% if(cartItems.length > 0) { %> <%cartItems.forEach(function(cartitem){ %>
 
-  <div class="Product-card" style="margin-left: 15px">
-    <img
-      class="card-img-top product-img"
-      src="/img/<%= cartitem.image %>"
-      alt="Card image cap"
-    />
-    <div class="card-body">
-      <div class="card-text mb-1"><%= cartitem.name %></div>
-      <div class="card-text mb-1">מחיר : <%= cartitem.price %> ש"ח</div>
-      <div class="card-text mb-1">מקט : <%= cartitem.id %></div>
-    </div>
 
-    <% }) %> <% } else { %>
-    <h1>no items in cart</h1>
-    <%}%>
-    <form id="cartForm" action="/checkout" method="POST">
-      <button>קנייה</button>
-    </form>
-  </div>
+
+
+
+<div class="Cart-page">
+    <section id="page-header-cart" class="about-header">
+
+      <h2>#cart</h2>
+      <p>Add your coupon code & SAVE upto 70%!</p>
+
+  </section>
+
+
+  <section id="cart" class="section-p1">
+      <table width="100%">
+          <thead>
+              <tr>
+                  <td>Remove</td>
+                  <td>Image</td>
+                  <td>Product</td>
+                  <td>Price</td>
+                  <td>Quantity</td>
+                  <td>Id</td>
+              </tr>
+          </thead>
+
+          <tbody>
+            <% if(cartItems.length > 0) { %> <%cartItems.forEach(function(cartitem){ %>
+              <tr>
+                  <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                  <td><img src="/img/<%= cartitem.image %>" alt=""></td>
+                  <td><%= cartitem.name %></td>
+                  <td><%= cartitem.price %></td>
+                  <td><input type="number" value="1" name="" id=""></td>
+                  <td><%= cartitem.id %></td>
+              </tr>
+              <% }) }%>
+          </tbody>
+      </table>
+  </section>
+
+  <hr>
+
+
+  <section id="cart-add" class="section-p1">
+      
+
+      <div id="subtotal">
+          <h3>Cart Totals</h3>
+          <table>
+
+              <tr>
+                  <td><strong>Total</strong></td>
+                  <td><strong><%cartItems.forEach(function(cartitem){ %>
+                    
+                    <%= cartitem.price %> 
+
+                    <%})%>
+                  </strong></td>
+              </tr>
+
+          </table>
+          
+          <form id="cartForm" action="/checkout" method="POST">
+            <button>Proceed to checkout</button>
+          </form> 
+          
+        </div>
+
+
+  </section>
+
+
 </div>
