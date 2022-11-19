@@ -1,13 +1,14 @@
-*{
+* {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 body {
   background-image: url("");
   background-color: whitesmoke;
-}  
+}
 
 
-
+/* nav/header */
 #header {
   position: sticky;
   top: 0;
@@ -15,32 +16,21 @@ body {
   z-index: 999;
   margin-bottom: 10px;
 }
+
 #navbar {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100px;
-  
+
 }
-.nav-link{
+
+.nav-link {
   color: #cce7d0;
   font-size: larger;
-  
+
 }
 
-
-
-
-
-#page-header-cart{
-  height: 45vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background-image: url("../img/banner.png");
-  color: #088178;
-}
 
 #page-header {
   height: 40vh;
@@ -62,7 +52,7 @@ body {
 
 
 
-
+/* user-valitidion */
 .user-message {
   margin: auto;
   width: 100%;
@@ -71,6 +61,7 @@ body {
   text-align: center;
   padding: 5px;
 }
+
 .user-message--error {
   border-color: red;
   background: rgb(255, 176, 176);
@@ -82,13 +73,13 @@ body {
 
 
 
-
-.A {
+/* generall */
+.A{
   margin-left: 70px;
 }
 
 .B {
-
+  
   margin-left: 10px;
 }
 
@@ -96,12 +87,44 @@ body {
   margin-left: 10px;
 }
 
+.Clean_Checkout {
+  display: flex;
+}
+
+
 
 
 .Img {
   width: 610px;
 }
 
+.img_product {
+  border: solid 2px rgba(49, 48, 48, 0.26);
+}
+
+
+.add_to_cart {
+  float: right;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.img {
+  height: 50px;
+}
+
+
+.v1 {
+  margin-left: 50px;
+}
+
+
+
+
+
+/* card-product */
 #product1 {
   text-align: center;
   padding: 65px;
@@ -155,7 +178,7 @@ body {
   font-weight: bolder;
 }
 
-.des h5{
+.des h5 {
   font-size: 100px;
 }
 
@@ -172,119 +195,23 @@ body {
   color: #088178;
 }
 
-#product1 .pro .cart {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 50px;
-  background-color: #e8f6ea;
-  font-weight: 500;
+
+
+
+
+
+
+
+/* cart */
+#page-header-cart {
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-image: url("../img/banner.png");
   color: #088178;
-  border: 1px solid #cce7d0;
-  transition: 0.2s;
-  position: absolute;
-  bottom: 20px;
-  right: 10px;
 }
-
-#product1 .pro .cart:hover {
-  color: #fff;
-  background: #088178;
-  font-weight: 400;
-}
-
-.img_product{
-  border: solid 2px rgba(49, 48, 48, 0.26);
-}
-
-
-.add_to_cart{
-  float: right;
-}
-.icon{
-  font-size: 20px;
-}
-.img{
-height: 50px;
-}
-
-
-.v1{
-  margin-left: 50px;
-}
-
-
-
-.subscribe-area {
-  background-image: linear-gradient(to top, #aabbbe 0%, #3e5272 100%);
-  }
-  
-  .pb-50 {
-      padding-bottom: 50px;
-  }
-  .pt-70 {
-      padding-top: 70px;
-  }
-  
-  .mb-15 {
-      margin-bottom: 15px;
-  }
-  
-  .subscribe-text span {
-      font-size: 12px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 5px;
-  }
-  .subscribe-text h2 {
-      color: #fff;
-      font-size: 36px;
-      font-weight: 300;
-      margin-bottom: 0;
-      margin-top: 6px;
-  }
-  .subscribe-wrapper {
-      overflow: hidden;
-  }
-  .mb-15 {
-      margin-bottom: 15px;
-  }
-  .subscribe-form {
-  }
-  .subscribe2-wrapper .subscribe-form input {
-      background: none;
-      border: 1px solid #fff;
-      border-radius: 30px;
-      color: #fff;
-      display: inline-block;
-      font-size: 15px;
-      font-weight: 300;
-      height: 57px;
-      margin-right: 17px;
-      padding-left: 35px;
-      width: 70%;
-      cursor: pointer;
-  }
-   
-  .subscribe2-wrapper .subscribe-form button {
-      background: #ffff;
-      border: none;
-      border-radius: 30px;
-      color: #4b5d73;
-      display: inline-block;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 1;
-      padding: 18px 46px;
-      transition: all 0.3s ease 0s;
-  }
-  .subscribe2-wrapper .subscribe-form button i {
-      font-size: 18px;
-      padding-left: 5px;
-  }
-  
-
-
 
 #cart {
   overflow-x: auto;
@@ -356,25 +283,14 @@ height: 50px;
 }
 
 
-#cuopon {
-  width: 50%;
-  margin-bottom: 30px;
-}
 
-#cuopon h3,
+/* subtotal */
 #subtotal h3 {
   padding-bottom: 15px;
 }
 
-#cuopon input {
-  padding: 10px 20px;
-  outline: none;
-  width: 60%;
-  margin-right: 10px;
-  border: 1px solid #e2e9e1;
-}
 
-#cuopon button,
+
 #subtotal button {
   background: #088178;
   color: #fff;
@@ -399,4 +315,10 @@ height: 50px;
   border: 1px solid #e2e9e1;
   padding: 10px;
   font-size: 13px;
+}
+
+.carsuel {
+  padding: 80px;
+  text-align: -webkit-center;
+  background-color: ghostwhite;
 }

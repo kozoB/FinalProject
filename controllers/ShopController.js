@@ -1,4 +1,5 @@
 require("../database");
+const session = require("express-session");
 const Category = require("../models/Category");
 const Order = require("../models/Order");
 const Product = require("../models/Product");
@@ -67,7 +68,13 @@ exports.getAbout = async (req, res) => {
 
 
 
+exports.CleanCart = async (req,res)=> {
 
+
+  req.session.cart=[]
+  res.redirect("/cart");
+  
+}
 
 
 // async function insertDymmyCategoryData() {
