@@ -37,6 +37,9 @@
             <h4>
               $<%= product.price %>
             </h4>
+            <h4>
+              catalog number - <%= product.id %>
+            </h4>
             <div>
               <form class="add_to_cart" action="/add-to-cart" method="POST">
                 <input type="hidden" name="productId" value="<%=product._id%>" />
