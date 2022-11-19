@@ -18,8 +18,8 @@
                   <td>Remove</td>
                   <td>Image</td>
                   <td>Product</td>
-                  <td>Price</td>
                   <td>Quantity</td>
+                  <td>Price</td>
                   <td>Id</td>
               </tr>
           </thead>
@@ -27,11 +27,11 @@
           <tbody>
             <% if(cartItems.length > 0) { %> <%cartItems.forEach(function(cartitem){ %>
               <tr>
-                  <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                  <td><a href="/"><i class="far fa-times-circle"></i></a></td>
                   <td><img src="/img/<%= cartitem.image %>" alt=""></td>
                   <td><%= cartitem.name %></td>
-                  <td><%= cartitem.price %>$</td>
-                  <td><input type="number" value="1" name="" id=""></td>
+                  <td><input type="number" value="1" ></td>
+                  <td>$<%= cartitem.price %></td>
                   <td><%= cartitem.id %></td>
               </tr>
               <% }) }%>
@@ -51,11 +51,11 @@
 
               <tr>
                   <td><strong>Total</strong></td>
-                  <td><strong><%cartItems.forEach(function(cartitem){ %>
+                  <td><strong>
                     
-                    <%= cartitem.price %> 
+                    $ <%= totalPrice%> 
 
-                    <%})%>
+                   
                   </strong></td>
               </tr>
 

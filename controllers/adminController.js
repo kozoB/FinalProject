@@ -42,16 +42,11 @@ exports.getAddProduct = async (req, res) => {
     }
     
 
-    exports.getDashboard = async (req,res)=> {
-
-    
-      res.redirect("/")
-
-
-    }
     exports.deleteProduct = async (req,res)=> {
       const {productId} = req.body;
       await Product.findByIdAndDelete(productId)
       res.redirect("/")
 
     }
+
+   

@@ -40,7 +40,8 @@ exports.getCart = async (req, res) => {
   const {isAdmin,isLoggedIn} = req.session;
 
   const cartItems = [...req.session.cart];
-  res.render("cart", { cartItems,isAdmin,isLoggedIn });
+  const totalPrice = cartItems.reduce((sum, item) => (sum += item.price), 0);
+  res.render("cart", { cartItems,isAdmin,isLoggedIn,totalPrice});
 };
 
 exports.checkout = async (req, res) => {
@@ -55,7 +56,7 @@ exports.checkout = async (req, res) => {
 exports.getStatic = async (req, res) => {
   const {isAdmin,isLoggedIn} = req.session;
 
-  res.render("D3", { isAdmin,isLoggedIn });
+  res.render("statistic", { isAdmin,isLoggedIn });
 };
 
 exports.getAbout = async (req, res) => {
@@ -63,6 +64,10 @@ exports.getAbout = async (req, res) => {
 
   res.render("about", { isAdmin,isLoggedIn });
 };
+
+
+
+
 
 
 // async function insertDymmyCategoryData() {

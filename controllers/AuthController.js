@@ -25,7 +25,7 @@ exports.Postlogin = async (req, res) => {
     if (!result) {
       return res.redirect("/login?passwordDoesNotMatch");
     }
-    console.log("got ");
+    console.log("success to connect");
     req.session.isLoggedIn = true;
     req.session.user = user;
     if (user.username === "shovalash1@gmail.com") {

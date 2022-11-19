@@ -15,9 +15,9 @@ router.get("/categories/:id", ShopController.exploreCategoriesById);
 router.get("/add-product", adminController.getAddProduct);
 router.get("/logout", adminController.logOut);
 router.get("/cart", initCart ,ShopController.getCart);
-router.get("/D3",isLoggedIn,ShopController.getStatic);
+router.get("/statistic",isLoggedIn,ShopController.getStatic);
 router.get("/about",ShopController.getAbout);
-router.get("/admin-dashboard",isLoggedIn,isAdmin,adminController.getDashboard);
+
 
 // post request
 router.post("/add-product", adminController.postAddProduct);
